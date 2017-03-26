@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--配置连接属性-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/lifescore</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
+        <!--<property name="connection.password">Lk123!@#</property>-->
+
+        <!--配置C3P0-->
+        <property name="connection.pool_size">1</property>
+        <property name="connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <property name="c3p0.min_size">5</property>
+        <property name="c3p0.max_size">20</property>
+        <property name="c3p0.timeout">120</property>
+        <property name="c3p0.idle_test_period">3000</property>
+
+        <!-- =============== 数据库方言设置 =================== -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+
+        <!-- =============== 控制台打印sql语句设置设置 =================== -->
+        <property name="show_sql">true</property>
+
+        <!-- =============== 数据库表结构更新设置 =================== -->
+        <!--<property name="hbm2ddl.auto">update</property>-->
+
+
+        <!-- =============== 实体关系列表 =================== -->
+        <mapping resource="config/hbm/DayScoreLog.hbm.xml"/>
+        <mapping resource="config/hbm/ExchangeItem.hbm.xml"/>
+        <mapping resource="config/hbm/Product.hbm.xml"/>
+        <mapping resource="config/hbm/ProductType.hbm.xml"/>
+        <mapping resource="config/hbm/Task.hbm.xml"/>
+        <mapping resource="config/hbm/TaskItem.hbm.xml"/>
+        <mapping resource="config/hbm/TaskType.hbm.xml"/>
+        <mapping resource="config/hbm/User.hbm.xml"/>
+        <mapping resource="config/hbm/UserExt.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

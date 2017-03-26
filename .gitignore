@@ -1,0 +1,7 @@
+.idea/*
+.svn/*
+out/*
+target/*
+.idea/
+src/main/webapp/upload/
+target/
