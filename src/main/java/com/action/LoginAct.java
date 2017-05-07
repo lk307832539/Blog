@@ -36,8 +36,6 @@ public class LoginAct {
         //根据shiro返回的异常类路径判断，抛出指定异常信息
         if (exceptionClassName != null) {
             if (UnknownAccountException.class.getName().equals(exceptionClassName)) {
-                //最终会抛给异常处理器
-                // throw new CustomException("账号不存在");
                 System.out.println("账号不存在");
             } else if (IncorrectCredentialsException.class.getName().equals(
                     exceptionClassName)) {
@@ -58,9 +56,7 @@ public class LoginAct {
     }
 
     @RequestMapping(value = "/simpleRegist")
-    public String simpleRegist(String username, String email, String password, String repassword,
-                               HttpServletRequest request, HttpServletResponse response, ModelMap model) {
-
+    public String simpleRegist(String username, String email, String password, String repassword, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
         return "login";
     }
 

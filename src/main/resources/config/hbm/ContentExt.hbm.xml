@@ -8,6 +8,6 @@
         <id name="contentId" column="content_id"/>
         <property name="title" column="title"/>
         <property name="text" column="text"/>
-        <one-to-one name="contentByContentId" class="com.entity.Content"/>
+        <one-to-one name="content" class="com.entity.Content"/>
     </class>
 </hibernate-mapping>

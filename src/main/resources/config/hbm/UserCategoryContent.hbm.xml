@@ -6,9 +6,9 @@
 
     <class name="com.entity.UserCategoryContent" table="user_category_content" schema="blog">
         <id name="userCategoryId" column="user_category_id"/>
-        <many-to-one name="contentByContentId" class="com.entity.Content">
+        <many-to-one name="content" class="com.entity.Content">
             <column name="content_id" not-null="true"/>
         </many-to-one>
-        <one-to-one name="userCategoryByUserCategoryId" class="com.entity.UserCategory"/>
+        <one-to-one name="userCategory" class="com.entity.UserCategory"/>
     </class>
 </hibernate-mapping>

@@ -13,7 +13,7 @@
         <property name="contentType" column="content_type"/>
         <property name="status" column="status"/>
         <property name="editorType" column="editor_type"/>
-        <many-to-one name="userByUserId" class="com.entity.User">
+        <many-to-one name="user" class="com.entity.User">
             <column name="user_id" not-null="true"/>
         </many-to-one>
     </class>

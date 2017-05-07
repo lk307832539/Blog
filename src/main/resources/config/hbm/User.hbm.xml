@@ -20,13 +20,13 @@
         <property name="regiestType" column="regiest_type"/>
         <property name="score" column="score"/>
         <one-to-one name="userExtByUserId" class="com.entity.UserExt"/>
-        <set name="contentsByUserId" inverse="true">
+        <set name="contents" inverse="true">
             <key>
                 <column name="user_id" not-null="true"/>
             </key>
             <one-to-many not-found="ignore" class="com.entity.Content"/>
         </set>
-        <set name="userCategoriesByUserId" inverse="true">
+        <set name="userCategories" inverse="true">
             <key>
                 <column name="user_id" not-null="true"/>
             </key>

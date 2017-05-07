@@ -7,6 +7,8 @@
         <!--配置连接属性-->
         <property name="connection.url">jdbc:mysql://localhost:3306/blog</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
         <!--<property name="connection.password">Lk123!@#</property>-->
 
         <!--配置C3P0-->
@@ -23,20 +25,20 @@
 
         <!-- =============== 控制台打印sql语句设置设置 =================== -->
         <property name="show_sql">true</property>
-        <mapping resource="com/entity/Channel.hbm.xml"/>
-        <mapping resource="com/entity/Content.hbm.xml"/>
-        <mapping resource="com/entity/ContentExt.hbm.xml"/>
-        <mapping resource="com/entity/Tag.hbm.xml"/>
-        <mapping resource="com/entity/User.hbm.xml"/>
-        <mapping resource="com/entity/UserCategory.hbm.xml"/>
-        <mapping resource="com/entity/UserCategoryContent.hbm.xml"/>
-        <mapping resource="com/entity/UserExt.hbm.xml"/>
-
+        
         <!-- =============== 数据库表结构更新设置 =================== -->
         <!--<property name="hbm2ddl.auto">update</property>-->
 
 
         <!-- =============== 实体关系列表 =================== -->
+        <mapping resource="config/hbm/Channel.hbm.xml"/>
+        <mapping resource="config/hbm/Content.hbm.xml"/>
+        <mapping resource="config/hbm/ContentExt.hbm.xml"/>
+        <mapping resource="config/hbm/Tag.hbm.xml"/>
+        <mapping resource="config/hbm/User.hbm.xml"/>
+        <mapping resource="config/hbm/UserCategory.hbm.xml"/>
+        <mapping resource="config/hbm/UserCategoryContent.hbm.xml"/>
+        <mapping resource="config/hbm/UserExt.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
