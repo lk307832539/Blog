@@ -30,12 +30,6 @@ public class LoginAct {
     @RequestMapping(value = "/login")
     public String login(String username, String password, HttpServletRequest request, HttpServletResponse response,
                         ModelMap model) throws Exception {
-//        User user = this.userMng.getUserByUserName(username);
-//        if(user!=null){
-//            if(user.getPassword().equals(password)){
-//                model.addAttribute("user",user);
-//            }
-//        }
 
         //如果登陆失败从request中获取认证异常信息，shiroLoginFailure就是shiro异常类的全限定名
         String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");

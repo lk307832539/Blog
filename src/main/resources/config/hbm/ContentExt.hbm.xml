@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.entity.ContentExt" table="content_ext" schema="blog">
+        <id name="contentId" column="content_id"/>
+        <property name="title" column="title"/>
+        <property name="text" column="text"/>
+        <one-to-one name="contentByContentId" class="com.entity.Content"/>
+    </class>
+</hibernate-mapping>

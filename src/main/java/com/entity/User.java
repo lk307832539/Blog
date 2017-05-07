@@ -1,230 +1,163 @@
 package com.entity;
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collection;
 
 /**
- * User entity. @author MyEclipse Persistence Tools
+ * Created by LK on 2017/5/7.
  */
+public class User {
+    private int userId;
+    private String userName;
+    private String nikeName;
+    private String email;
+    private String password;
+    private String salt;
+    private Timestamp registerTime;
+    private String registerIp;
+    private Timestamp lastLoginTime;
+    private String lastLoginIp;
+    private String loginCount;
+    private String validateCode;
+    private Byte regiestType;
+    private Integer score;
+    private Collection<Content> contents;
+    private Collection<UserCategory> userCategories;
+    private UserExt userExtByUserId;
 
-public class User implements java.io.Serializable {
+    public int getUserId() {
+        return userId;
+    }
 
-	// Fields
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
-	private Integer userId;
-	private String userName;
-	private String nikeName;
-	private String email;
-	private String password;
-	private Timestamp registerTime;
-	private String registerIp;
-	private Timestamp lastLoginTime;
-	private String lastLoginIp;
-	private String loginCount;
-	private String validateCode;
-	private Short regiestType;
-	private Integer score;
-	private Set exchangeItems = new HashSet(0);
-	private Set dayScoreLogs = new HashSet(0);
-	private Set taskTypes = new HashSet(0);
-	private Set tasks = new HashSet(0);
-	private Set productTypes = new HashSet(0);
-	private Set userExts = new HashSet(0);
-	private Set products = new HashSet(0);
+    public String getUserName() {
+        return userName;
+    }
 
-	// Constructors
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	/** default constructor */
-	public User() {
-	}
+    public String getNikeName() {
+        return nikeName;
+    }
 
-	/** full constructor */
-	public User(String userName, String nikeName, String email, String password, Timestamp registerTime,
-			String registerIp, Timestamp lastLoginTime, String lastLoginIp, String loginCount, String validateCode,
-			Short regiestType, Integer score, Set exchangeItems, Set dayScoreLogs, Set taskTypes, Set tasks,
-			Set productTypes, Set userExts, Set products) {
-		this.userName = userName;
-		this.nikeName = nikeName;
-		this.email = email;
-		this.password = password;
-		this.registerTime = registerTime;
-		this.registerIp = registerIp;
-		this.lastLoginTime = lastLoginTime;
-		this.lastLoginIp = lastLoginIp;
-		this.loginCount = loginCount;
-		this.validateCode = validateCode;
-		this.regiestType = regiestType;
-		this.score = score;
-		this.exchangeItems = exchangeItems;
-		this.dayScoreLogs = dayScoreLogs;
-		this.taskTypes = taskTypes;
-		this.tasks = tasks;
-		this.productTypes = productTypes;
-		this.userExts = userExts;
-		this.products = products;
-	}
+    public void setNikeName(String nikeName) {
+        this.nikeName = nikeName;
+    }
 
-	// Property accessors
+    public String getEmail() {
+        return email;
+    }
 
-	public Integer getUserId() {
-		return this.userId;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getUserName() {
-		return this.userName;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public String getSalt() {
+        return salt;
+    }
 
-	public String getNikeName() {
-		return this.nikeName;
-	}
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
 
-	public void setNikeName(String nikeName) {
-		this.nikeName = nikeName;
-	}
+    public Timestamp getRegisterTime() {
+        return registerTime;
+    }
 
-	public String getEmail() {
-		return this.email;
-	}
+    public void setRegisterTime(Timestamp registerTime) {
+        this.registerTime = registerTime;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getRegisterIp() {
+        return registerIp;
+    }
 
-	public String getPassword() {
-		return this.password;
-	}
+    public void setRegisterIp(String registerIp) {
+        this.registerIp = registerIp;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public Timestamp getLastLoginTime() {
+        return lastLoginTime;
+    }
 
-	public Timestamp getRegisterTime() {
-		return this.registerTime;
-	}
+    public void setLastLoginTime(Timestamp lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
+    }
 
-	public void setRegisterTime(Timestamp registerTime) {
-		this.registerTime = registerTime;
-	}
+    public String getLastLoginIp() {
+        return lastLoginIp;
+    }
 
-	public String getRegisterIp() {
-		return this.registerIp;
-	}
+    public void setLastLoginIp(String lastLoginIp) {
+        this.lastLoginIp = lastLoginIp;
+    }
 
-	public void setRegisterIp(String registerIp) {
-		this.registerIp = registerIp;
-	}
+    public String getLoginCount() {
+        return loginCount;
+    }
 
-	public Timestamp getLastLoginTime() {
-		return this.lastLoginTime;
-	}
+    public void setLoginCount(String loginCount) {
+        this.loginCount = loginCount;
+    }
 
-	public void setLastLoginTime(Timestamp lastLoginTime) {
-		this.lastLoginTime = lastLoginTime;
-	}
+    public String getValidateCode() {
+        return validateCode;
+    }
 
-	public String getLastLoginIp() {
-		return this.lastLoginIp;
-	}
+    public void setValidateCode(String validateCode) {
+        this.validateCode = validateCode;
+    }
 
-	public void setLastLoginIp(String lastLoginIp) {
-		this.lastLoginIp = lastLoginIp;
-	}
+    public Byte getRegiestType() {
+        return regiestType;
+    }
 
-	public String getLoginCount() {
-		return this.loginCount;
-	}
+    public void setRegiestType(Byte regiestType) {
+        this.regiestType = regiestType;
+    }
 
-	public void setLoginCount(String loginCount) {
-		this.loginCount = loginCount;
-	}
+    public Integer getScore() {
+        return score;
+    }
 
-	public String getValidateCode() {
-		return this.validateCode;
-	}
+    public void setScore(Integer score) {
+        this.score = score;
+    }
 
-	public void setValidateCode(String validateCode) {
-		this.validateCode = validateCode;
-	}
+    public Collection<Content> getContents() {
+        return contents;
+    }
 
-	public Short getRegiestType() {
-		return this.regiestType;
-	}
+    public void setContents(Collection<Content> contents) {
+        this.contents = contents;
+    }
 
-	public void setRegiestType(Short regiestType) {
-		this.regiestType = regiestType;
-	}
+    public Collection<UserCategory> getUserCategories() {
+        return userCategories;
+    }
 
-	public Integer getScore() {
-		return this.score;
-	}
+    public void setUserCategories(Collection<UserCategory> userCategories) {
+        this.userCategories = userCategories;
+    }
 
-	public void setScore(Integer score) {
-		this.score = score;
-	}
+    public UserExt getUserExtByUserId() {
+        return userExtByUserId;
+    }
 
-	public Set getExchangeItems() {
-		return this.exchangeItems;
-	}
-
-	public void setExchangeItems(Set exchangeItems) {
-		this.exchangeItems = exchangeItems;
-	}
-
-	public Set getDayScoreLogs() {
-		return this.dayScoreLogs;
-	}
-
-	public void setDayScoreLogs(Set dayScoreLogs) {
-		this.dayScoreLogs = dayScoreLogs;
-	}
-
-	public Set getTaskTypes() {
-		return this.taskTypes;
-	}
-
-	public void setTaskTypes(Set taskTypes) {
-		this.taskTypes = taskTypes;
-	}
-
-	public Set getTasks() {
-		return this.tasks;
-	}
-
-	public void setTasks(Set tasks) {
-		this.tasks = tasks;
-	}
-
-	public Set getProductTypes() {
-		return this.productTypes;
-	}
-
-	public void setProductTypes(Set productTypes) {
-		this.productTypes = productTypes;
-	}
-
-	public Set getUserExts() {
-		return this.userExts;
-	}
-
-	public void setUserExts(Set userExts) {
-		this.userExts = userExts;
-	}
-
-	public Set getProducts() {
-		return this.products;
-	}
-
-	public void setProducts(Set products) {
-		this.products = products;
-	}
-
+    public void setUserExtByUserId(UserExt userExtByUserId) {
+        this.userExtByUserId = userExtByUserId;
+    }
 }

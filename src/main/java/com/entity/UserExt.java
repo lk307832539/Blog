@@ -1,151 +1,164 @@
 package com.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
- * UserExt entity. @author MyEclipse Persistence Tools
+ * Created by LK on 2017/5/7.
  */
+public class UserExt {
+    private int userId;
+    private String userImg;
+    private String nickName;
+    private String realName;
+    private Date birthday;
+    private String sex;
+    private String wechat;
+    private String qq;
+    private String address;
+    private String profession;
+    private String intro;
+    private User user;
+    private User userByUserId;
 
-public class UserExt implements java.io.Serializable {
+    public int getUserId() {
+        return userId;
+    }
 
-	// Fields
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
-	private Integer userExtId;
-	private User user;
-	private String userImg;
-	private String nickName;
-	private String realName;
-	private Date birthday;
-	private String sex;
-	private String wechat;
-	private String qq;
-	private String address;
-	private String profession;
-	private String intro;
+    public String getUserImg() {
+        return userImg;
+    }
 
-	// Constructors
+    public void setUserImg(String userImg) {
+        this.userImg = userImg;
+    }
 
-	/** default constructor */
-	public UserExt() {
-	}
+    public String getNickName() {
+        return nickName;
+    }
 
-	/** minimal constructor */
-	public UserExt(User user) {
-		this.user = user;
-	}
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
 
-	/** full constructor */
-	public UserExt(User user, String userImg, String nickName, String realName, Date birthday, String sex,
-			String wechat, String qq, String address, String profession, String intro) {
-		this.user = user;
-		this.userImg = userImg;
-		this.nickName = nickName;
-		this.realName = realName;
-		this.birthday = birthday;
-		this.sex = sex;
-		this.wechat = wechat;
-		this.qq = qq;
-		this.address = address;
-		this.profession = profession;
-		this.intro = intro;
-	}
+    public String getRealName() {
+        return realName;
+    }
 
-	// Property accessors
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
 
-	public Integer getUserExtId() {
-		return this.userExtId;
-	}
+    public Date getBirthday() {
+        return birthday;
+    }
 
-	public void setUserExtId(Integer userExtId) {
-		this.userExtId = userExtId;
-	}
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
-	public User getUser() {
-		return this.user;
-	}
+    public String getSex() {
+        return sex;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
-	public String getUserImg() {
-		return this.userImg;
-	}
+    public String getWechat() {
+        return wechat;
+    }
 
-	public void setUserImg(String userImg) {
-		this.userImg = userImg;
-	}
+    public void setWechat(String wechat) {
+        this.wechat = wechat;
+    }
 
-	public String getNickName() {
-		return this.nickName;
-	}
+    public String getQq() {
+        return qq;
+    }
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
+    public void setQq(String qq) {
+        this.qq = qq;
+    }
 
-	public String getRealName() {
-		return this.realName;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setRealName(String realName) {
-		this.realName = realName;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public Date getBirthday() {
-		return this.birthday;
-	}
+    public String getProfession() {
+        return profession;
+    }
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
 
-	public String getSex() {
-		return this.sex;
-	}
+    public String getIntro() {
+        return intro;
+    }
 
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
 
-	public String getWechat() {
-		return this.wechat;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public void setWechat(String wechat) {
-		this.wechat = wechat;
-	}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-	public String getQq() {
-		return this.qq;
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-	public void setQq(String qq) {
-		this.qq = qq;
-	}
+        UserExt userExt = (UserExt) o;
 
-	public String getAddress() {
-		return this.address;
-	}
+        if (userId != userExt.userId) return false;
+        if (userImg != null ? !userImg.equals(userExt.userImg) : userExt.userImg != null) return false;
+        if (nickName != null ? !nickName.equals(userExt.nickName) : userExt.nickName != null) return false;
+        if (realName != null ? !realName.equals(userExt.realName) : userExt.realName != null) return false;
+        if (birthday != null ? !birthday.equals(userExt.birthday) : userExt.birthday != null) return false;
+        if (sex != null ? !sex.equals(userExt.sex) : userExt.sex != null) return false;
+        if (wechat != null ? !wechat.equals(userExt.wechat) : userExt.wechat != null) return false;
+        if (qq != null ? !qq.equals(userExt.qq) : userExt.qq != null) return false;
+        if (address != null ? !address.equals(userExt.address) : userExt.address != null) return false;
+        if (profession != null ? !profession.equals(userExt.profession) : userExt.profession != null) return false;
+        if (intro != null ? !intro.equals(userExt.intro) : userExt.intro != null) return false;
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+        return true;
+    }
 
-	public String getProfession() {
-		return this.profession;
-	}
+    @Override
+    public int hashCode() {
+        int result = userId;
+        result = 31 * result + (userImg != null ? userImg.hashCode() : 0);
+        result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
+        result = 31 * result + (realName != null ? realName.hashCode() : 0);
+        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
+        result = 31 * result + (sex != null ? sex.hashCode() : 0);
+        result = 31 * result + (wechat != null ? wechat.hashCode() : 0);
+        result = 31 * result + (qq != null ? qq.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (profession != null ? profession.hashCode() : 0);
+        result = 31 * result + (intro != null ? intro.hashCode() : 0);
+        return result;
+    }
 
-	public void setProfession(String profession) {
-		this.profession = profession;
-	}
+    public User getUserByUserId() {
+        return userByUserId;
+    }
 
-	public String getIntro() {
-		return this.intro;
-	}
-
-	public void setIntro(String intro) {
-		this.intro = intro;
-	}
-
+    public void setUserByUserId(User userByUserId) {
+        this.userByUserId = userByUserId;
+    }
 }
