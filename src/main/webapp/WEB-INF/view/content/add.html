@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>新增日志</title>
+    <link href="/source/MDB/fontAwesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/source/MDB/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/source/MDB/css/mdb.min.css" rel="stylesheet">
+    <link href="/source/css/indexstyle.css" rel="stylesheet">
+    <script type="text/javascript" src="/source/MDB/js/jquery-2.2.3.min.js"></script>
+</head>
+
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+        <i class="fa fa-bars"></i>
+    </button>
+    <div class="container">
+        <div class="collapse navbar-toggleable-xs" id="collapseEx">
+            <a class="navbar-brand" href="javascript:void(0)" target="_blank">小小康小小云</a>
+            <div style="float: right;">
+                [#if user??]
+                ${user.userName}
+                [#else]
+                <button class="btn btn-default-outline waves-effect" type="button" data-toggle="modal" data-target="#modal-login">登录/注册</button>
+                [/#if]
+            </div>
+        </div>
+        <!--/.Collapse content-->
+    </div>
+</nav>
+<!--/.Navbar-->
+
+<!--Mask-->
+<div class="view hm-black-strong">
+    <div class="full-bg-img flex-center">
+        <div class="md-form">
+            <input type="text" id="form1" class="form-control">
+            <label for="form1" class="">标题</label>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/source/MDB/js/tether.min.js"></script>
+<script type="text/javascript" src="/source/MDB/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/source/MDB/js/mdb.min.js"></script>
+</body>
+</html>

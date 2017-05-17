@@ -16,6 +16,6 @@
         <property name="address" column="address"/>
         <property name="profession" column="profession"/>
         <property name="intro" column="intro"/>
-        <one-to-one name="userByUserId" class="com.entity.User"/>
+        <one-to-one name="user" class="com.entity.User"/>
     </class>
 </hibernate-mapping>

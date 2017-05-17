@@ -22,28 +22,37 @@ public class TestGetUser {
 
     @Before
     public void setUp() {
-        sf = new Configuration().configure().buildSessionFactory();
+        sf = new Configuration().configure("config/hibernate.cfg.xml").buildSessionFactory();
         session = sf.openSession();
         System.out.println("在setUp()方法中对象初始化成功！");
     }
 
     @After
-    public  void tearDown(){
+    public void tearDown() {
         session.close();
         sf.close();
         System.out.println("在tearDown()方法中对象成功释放！");
     }
 
-   @Resource
-   private UserDao userDao;
+    @Resource
+    private UserDao userDao;
 
     @Test
     public void testGetUser() {
-        List<User> list;
-        list = this.userDao.getAllUser();
-        for (User u :list) {
-            System.out.println(u.getUserName());
+        List<User> list = this.userDao.getAllUser();
+        if (!list.isEmpty()) {
+            for (User u : list) {
+                System.out.println(u.getUserName());
+            }
         }
+    }
+
+    @Test
+    public void addUser(){
+        User user = new User();
+        user.setUserName("admin");
+        user.setPassword("password");
+        this.userDao.addUser(user);
     }
 
 }

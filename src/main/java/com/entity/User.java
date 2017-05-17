@@ -23,7 +23,7 @@ public class User {
     private Integer score;
     private Collection<Content> contents;
     private Collection<UserCategory> userCategories;
-    private UserExt userExtByUserId;
+    private UserExt userExt;
 
     public int getUserId() {
         return userId;
@@ -153,11 +153,11 @@ public class User {
         this.userCategories = userCategories;
     }
 
-    public UserExt getUserExtByUserId() {
-        return userExtByUserId;
+    public UserExt getUserExt() {
+        return userExt;
     }
 
-    public void setUserExtByUserId(UserExt userExtByUserId) {
-        this.userExtByUserId = userExtByUserId;
+    public void setUserExt(UserExt userExt) {
+        this.userExt = userExt;
     }
 }

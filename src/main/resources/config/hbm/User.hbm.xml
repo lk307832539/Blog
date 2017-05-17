@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
     <class name="com.entity.User" table="user" schema="blog">
@@ -19,7 +19,7 @@
         <property name="validateCode" column="validate_code"/>
         <property name="regiestType" column="regiest_type"/>
         <property name="score" column="score"/>
-        <one-to-one name="userExtByUserId" class="com.entity.UserExt"/>
+        <one-to-one name="userExt" class="com.entity.UserExt"/>
         <set name="contents" inverse="true">
             <key>
                 <column name="user_id" not-null="true"/>

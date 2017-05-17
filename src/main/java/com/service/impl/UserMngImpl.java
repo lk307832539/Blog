@@ -1,7 +1,6 @@
 package com.service.impl;
 
 import com.dao.UserDao;
-import com.dao.impl.UserDaoImpl;
 import com.entity.User;
 import com.service.UserMng;
 import org.springframework.stereotype.Service;
@@ -19,18 +18,15 @@ public class UserMngImpl implements UserMng {
     private UserDao userDao;
 
     public List<User> getAllUser() {
-        List<User> list = this.userDao.getAllUser();
-        return list;
+        return this.userDao.getAllUser();
     }
 
     public User getUserById(Integer id) {
-        User user = this.userDao.getUserById(id);
-        return user;
+        return this.userDao.getUserById(id);
     }
 
     @Override
     public User getUserByUserName(String userName) {
-        User user = this.userDao.getUserByUserName(userName);
-        return user;
+        return this.userDao.getUserByUserName(userName);
     }
 }

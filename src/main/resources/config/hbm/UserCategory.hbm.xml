@@ -8,7 +8,7 @@
         <id name="userCategoryId" column="user_category_id"/>
         <property name="categoryName" column="category_name"/>
         <property name="categoryDescription" column="category_description"/>
-        <many-to-one name="userByUserId" class="com.entity.User">
+        <many-to-one name="user" class="com.entity.User">
             <column name="user_id" not-null="true"/>
         </many-to-one>
     </class>

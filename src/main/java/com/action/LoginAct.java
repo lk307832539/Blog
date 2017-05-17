@@ -10,12 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Created by LK on 2016/8/21.
@@ -52,7 +50,7 @@ public class LoginAct {
         }
         //此方法不处理登陆成功（认证成功），shiro认证成功会自动跳转到上一个请求路径
         //登陆失败还到login页面
-        return "index";
+        return "index/index";
     }
 
     @RequestMapping(value = "/simpleRegist")
@@ -67,7 +65,7 @@ public class LoginAct {
         String username = (String) subject.getPrincipal();
         User user = userMng.getUserByUserName(username);
         model.addAttribute("user", user);
-        return "index";
+        return "index/index";
 
     }
 

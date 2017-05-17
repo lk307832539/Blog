@@ -7,10 +7,12 @@ import java.util.List;
 /**
  * Created by LK on 2016/8/4.
  */
-public abstract interface UserDao {
-    public List<User> getAllUser();
+public interface UserDao {
+    List<User> getAllUser();
 
-    public User getUserById(Integer id);
+    User getUserById(Integer id);
 
-    public User getUserByUserName(String userName);
+    User getUserByUserName(String userName);
+
+    void addUser(User user);
 }
