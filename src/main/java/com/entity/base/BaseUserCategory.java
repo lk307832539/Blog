@@ -1,5 +1,7 @@
 package com.entity.base;
 
+import com.entity.User;
+
 import java.io.Serializable;
 
 /**
@@ -9,7 +11,7 @@ public abstract class BaseUserCategory implements Serializable {
     private int userCategoryId;
     private String categoryName;
     private String categoryDescription;
-    private BaseUser user;
+    private User user;
 
     public BaseUserCategory() {
         super();
@@ -39,11 +41,11 @@ public abstract class BaseUserCategory implements Serializable {
         this.categoryDescription = categoryDescription;
     }
 
-    public BaseUser getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(BaseUser user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }

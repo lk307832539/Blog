@@ -1,5 +1,9 @@
 package com.entity.base;
 
+import com.entity.Content;
+import com.entity.UserCategory;
+import com.entity.UserExt;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Collection;
@@ -22,9 +26,9 @@ public abstract class BaseUser implements Serializable {
     private String validateCode;
     private Byte regiestType;
     private Integer score;
-    private Collection<BaseContent> contents;
-    private Collection<BaseUserCategory> userCategories;
-    private BaseUserExt userExt;
+    private Collection<Content> contents;
+    private Collection<UserCategory> userCategories;
+    private UserExt userExt;
 
     public BaseUser() {
         super();
@@ -142,27 +146,27 @@ public abstract class BaseUser implements Serializable {
         this.score = score;
     }
 
-    public Collection<BaseContent> getContents() {
+    public Collection<Content> getContents() {
         return contents;
     }
 
-    public void setContents(Collection<BaseContent> contents) {
+    public void setContents(Collection<Content> contents) {
         this.contents = contents;
     }
 
-    public Collection<BaseUserCategory> getUserCategories() {
+    public Collection<UserCategory> getUserCategories() {
         return userCategories;
     }
 
-    public void setUserCategories(Collection<BaseUserCategory> userCategories) {
+    public void setUserCategories(Collection<UserCategory> userCategories) {
         this.userCategories = userCategories;
     }
 
-    public BaseUserExt getUserExt() {
+    public UserExt getUserExt() {
         return userExt;
     }
 
-    public void setUserExt(BaseUserExt userExt) {
+    public void setUserExt(UserExt userExt) {
         this.userExt = userExt;
     }
 }

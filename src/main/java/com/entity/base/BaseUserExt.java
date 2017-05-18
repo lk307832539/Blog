@@ -1,5 +1,7 @@
 package com.entity.base;
 
+import com.entity.User;
+
 import java.io.Serializable;
 import java.sql.Date;
 
@@ -18,7 +20,7 @@ public abstract class BaseUserExt implements Serializable {
     private String address;
     private String profession;
     private String intro;
-    private BaseUser user;
+    private User user;
 
     public BaseUserExt() {
         super();
@@ -112,11 +114,11 @@ public abstract class BaseUserExt implements Serializable {
         this.intro = intro;
     }
 
-    public BaseUser getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(BaseUser user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }

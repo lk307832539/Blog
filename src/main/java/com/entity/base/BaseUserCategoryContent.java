@@ -1,5 +1,8 @@
 package com.entity.base;
 
+import com.entity.Content;
+import com.entity.UserCategory;
+
 import java.io.Serializable;
 
 /**
@@ -7,8 +10,8 @@ import java.io.Serializable;
  */
 public abstract class BaseUserCategoryContent implements Serializable {
     private int userCategoryId;
-    private BaseUserCategory userCategory;
-    private BaseContent content;
+    private UserCategory userCategory;
+    private Content content;
 
     public BaseUserCategoryContent() {
         super();
@@ -22,19 +25,19 @@ public abstract class BaseUserCategoryContent implements Serializable {
         this.userCategoryId = userCategoryId;
     }
 
-    public BaseUserCategory getUserCategory() {
+    public UserCategory getUserCategory() {
         return userCategory;
     }
 
-    public void setUserCategory(BaseUserCategory userCategory) {
+    public void setUserCategory(UserCategory userCategory) {
         this.userCategory = userCategory;
     }
 
-    public BaseContent getContent() {
+    public Content getContent() {
         return content;
     }
 
-    public void setContent(BaseContent content) {
+    public void setContent(Content content) {
         this.content = content;
     }
 }
