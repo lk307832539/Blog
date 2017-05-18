@@ -11,25 +11,9 @@
 </head>
 
 <body>
+
 <!--Navbar-->
-<nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
-    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
-        <i class="fa fa-bars"></i>
-    </button>
-    <div class="container">
-        <div class="collapse navbar-toggleable-xs" id="collapseEx">
-            <a class="navbar-brand" href="javascript:void(0)" target="_blank">小小康小小云</a>
-            <div style="float: right;">
-                [#if user??]
-                ${user.userName}
-                [#else]
-                <button class="btn btn-default-outline waves-effect" type="button" data-toggle="modal" data-target="#modal-login">登录/注册</button>
-                [/#if]
-            </div>
-        </div>
-        <!--/.Collapse content-->
-    </div>
-</nav>
+[#include "../include/navbar.html"/]
 <!--/.Navbar-->
 
 <!--Mask-->

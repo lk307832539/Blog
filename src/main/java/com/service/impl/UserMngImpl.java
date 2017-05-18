@@ -17,10 +17,12 @@ public class UserMngImpl implements UserMng {
     @Resource
     private UserDao userDao;
 
+    @Override
     public List<User> getAllUser() {
         return this.userDao.getAllUser();
     }
 
+    @Override
     public User getUserById(Integer id) {
         return this.userDao.getUserById(id);
     }
