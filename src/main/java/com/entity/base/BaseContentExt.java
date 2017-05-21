@@ -5,6 +5,7 @@ import com.entity.Content;
 import java.io.Serializable;
 
 /**
+ * 内容拓展实体抽象类
  * Created by LK on 2017/5/7.
  */
 public abstract class BaseContentExt implements Serializable {

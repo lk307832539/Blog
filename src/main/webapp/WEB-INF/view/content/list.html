@@ -1,6 +1,15 @@
 <html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>xxkxxy</title>
+    <link href="/source/fontAwesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/source/MDB/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/source/MDB/css/mdb.min.css" rel="stylesheet">
+    <link href="/source/css/indexstyle.css" rel="stylesheet">
+    <script type="text/javascript" src="source/MDB/js/jquery-2.2.3.min.js"></script>
+</head>
 <body>
-
 <!--Navbar-->
 [#include "../include/navbar.html"/]
 <!--/.Navbar-->
@@ -8,10 +17,11 @@
 <!--Mask-->
 <div class="view hm-black-strong">
     <div class="full-bg-img flex-center">
+        <a target="_blank" href="/content/add.do" class="btn btn-primary btn-lg">新建笔记</a>
         <ul class="animated fadeInUp">
             [#list contentList as content]
             <li>
-                <h1 class="h1-responsive">{content.}</h1>
+                <h1 class="h1-responsive">{content.contentExt.title!}</h1>
             </li>
             [/#list]
         </ul>
@@ -22,14 +32,4 @@
 <script type="text/javascript" src="/source/MDB/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/source/MDB/js/mdb.min.js"></script>
 </body>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>xxkxxy</title>
-    <link href="/source/MDB/fontAwesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/source/MDB/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/source/MDB/css/mdb.min.css" rel="stylesheet">
-    <link href="/source/css/indexstyle.css" rel="stylesheet">
-    <script type="text/javascript" src="source/MDB/js/jquery-2.2.3.min.js"></script>
-</head>
 </html>

@@ -3,6 +3,7 @@ package com.entity.base;
 import java.io.Serializable;
 
 /**
+ * 栏目实体抽象类
  * Created by LK on 2017/5/7.
  */
 public abstract class BaseChannel implements Serializable {

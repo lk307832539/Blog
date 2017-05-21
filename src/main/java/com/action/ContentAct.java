@@ -30,6 +30,7 @@ public class ContentAct {
         List<Content> list = contentMng.getContentList();
 
         model.addAttribute("contentList", list);
+
         return "content/list";
     }
 

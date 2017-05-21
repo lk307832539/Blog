@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
+ * 用户实体抽象类
  * Created by LK on 2017/5/7.
  */
 public abstract class BaseUser implements Serializable {

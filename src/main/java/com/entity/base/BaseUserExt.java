@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 /**
+ * 用户拓展实体抽象类
  * Created by LK on 2017/5/7.
  */
 public abstract class BaseUserExt implements Serializable {

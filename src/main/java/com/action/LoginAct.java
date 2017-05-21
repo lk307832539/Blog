@@ -29,16 +29,18 @@ public class LoginAct {
     public String login(String username, String password, HttpServletRequest request, HttpServletResponse response,
                         ModelMap model) throws Exception {
 
+        String message = "";
+
         //如果登陆失败从request中获取认证异常信息，shiroLoginFailure就是shiro异常类的全限定名
         String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");
         //根据shiro返回的异常类路径判断，抛出指定异常信息
         if (exceptionClassName != null) {
             if (UnknownAccountException.class.getName().equals(exceptionClassName)) {
-                System.out.println("账号不存在");
+                message = "账号不存在";
             } else if (IncorrectCredentialsException.class.getName().equals(
                     exceptionClassName)) {
                 // throw new CustomException("用户名/密码错误");
-                System.out.println("用户名/密码错误");
+                message = "用户名/密码错误";
             }
            /* else if("randomCodeError".equals(exceptionClassName)){
                // throw new CustomException("验证码错误 ");
@@ -50,6 +52,8 @@ public class LoginAct {
         }
         //此方法不处理登陆成功（认证成功），shiro认证成功会自动跳转到上一个请求路径
         //登陆失败还到login页面
+
+        model.addAttribute("message", message);
         return "index/index";
     }
 

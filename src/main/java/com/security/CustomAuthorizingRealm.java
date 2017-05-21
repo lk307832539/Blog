@@ -11,6 +11,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import javax.annotation.Resource;
 
 /**
+ * shiro 授权
  * Created by LK on 2016/10/12.
  */
 public class CustomAuthorizingRealm extends AuthorizingRealm {
@@ -18,6 +19,12 @@ public class CustomAuthorizingRealm extends AuthorizingRealm {
     @Resource
     private UserMng userMng;
 
+    /**
+     * 获取授权信息
+     *
+     * @param principals
+     * @return 授权信息
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 
@@ -64,6 +71,13 @@ public class CustomAuthorizingRealm extends AuthorizingRealm {
 //        return simpleAuthorizationInfo;
     }
 
+    /**
+     * 身份认证
+     *
+     * @param token 认证令牌
+     * @return 认证信息
+     * @throws AuthenticationException
+     */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         // token是用户输入的用户名和密码
@@ -117,7 +131,7 @@ public class CustomAuthorizingRealm extends AuthorizingRealm {
 //        //将用户菜单 设置到activeUser
 //        activeUser.setMenus(menus);
 //
-//        //将activeUser设置simpleAuthenticationInfo
+//
 //        SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
 //                activeUser, password, ByteSource.Util.bytes(salt), this.getName());
 //

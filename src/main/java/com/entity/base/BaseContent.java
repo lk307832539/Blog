@@ -1,11 +1,13 @@
 package com.entity.base;
 
+import com.entity.ContentExt;
 import com.entity.User;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
+ * 内容实体抽象类
  * Created by LK on 2017/5/7.
  */
 public abstract class BaseContent implements Serializable {
@@ -18,6 +20,7 @@ public abstract class BaseContent implements Serializable {
     private Integer status;
     private Integer editorType;
     private User user;
+    private ContentExt contentExt;
 
     public BaseContent() {
         super();
@@ -93,5 +96,13 @@ public abstract class BaseContent implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public ContentExt getContentExt() {
+        return contentExt;
+    }
+
+    public void setContentExt(ContentExt contentExt) {
+        this.contentExt = contentExt;
     }
 }

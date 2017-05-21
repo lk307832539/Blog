@@ -16,5 +16,6 @@
         <many-to-one name="user" class="com.entity.User">
             <column name="user_id" not-null="true"/>
         </many-to-one>
+        <one-to-one name="contentExt" class="com.entity.ContentExt" cascade="delete"/>
     </class>
 </hibernate-mapping>
