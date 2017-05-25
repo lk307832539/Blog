@@ -18,9 +18,8 @@ import java.io.IOException;
 public class UeditorAct {
 
     @RequestMapping(value = "/init")
-    public void addNewContent(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws IOException {
+    public void initUeditor(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws IOException {
         String rootPath = "/";
         response.getWriter().write(new ActionEnter(request, rootPath).exec());
     }
-
 }
