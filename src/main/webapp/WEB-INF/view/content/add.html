@@ -25,31 +25,34 @@
 
 <div class="container">
     <div style="height: 100px;"></div>
-    <div class="md-form">
-        <i class="fa fa-header prefix"></i>
-        <input type="text" id="form2" name="title" class="form-control">
-        <label for="form2">标题</label>
-    </div>
-    <div><a>切换到MarkDown编辑器</a></div>
-    <div>文章内容</div>
-    <div>
-        <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
-    </div>
-    <div id="btns">
-        <div>
-            <button onclick="getAllHtml()">获得整个html的内容</button>
-            <button onclick="getContent()">获得内容</button>
-            <button onclick="setContent()">写入内容</button>
-            <button onclick="setContent(true)">追加内容</button>
-            <button onclick="getContentTxt()">获得纯文本</button>
-            <button onclick="getPlainTxt()">获得带格式的纯文本</button>
-            <button onclick="hasContent()">判断是否有内容</button>
-            <button onclick="setFocus()">使编辑器获得焦点</button>
-            <button onmousedown="isFocus(event)">编辑器是否获得焦点</button>
-            <button onmousedown="setblur(event)">编辑器失去焦点</button>
-
+    <form>
+        <div class="md-form">
+            <i class="fa fa-header prefix"></i>
+            <input type="text" id="form2" name="title" class="form-control">
+            <label for="form2">标题</label>
         </div>
-    </div>
+        <div><a>切换到MarkDown编辑器</a></div>
+        <div>文章内容</div>
+
+        <div><script id="editor" type="text/plain" style="width:100%;height:500px;"></script></div>
+
+        <div id="btns">
+            <div>
+                <button onclick="getAllHtml()">获得整个html的内容</button>
+                <button onclick="getContent()">获得内容</button>
+                <button onclick="setContent()">写入内容</button>
+                <button onclick="setContent(true)">追加内容</button>
+                <button onclick="getContentTxt()">获得纯文本</button>
+                <button onclick="getPlainTxt()">获得带格式的纯文本</button>
+                <button onclick="hasContent()">判断是否有内容</button>
+                <button onclick="setFocus()">使编辑器获得焦点</button>
+                <button onmousedown="isFocus(event)">编辑器是否获得焦点</button>
+                <button onmousedown="setblur(event)">编辑器失去焦点</button>
+
+            </div>
+        </div>
+        <
+    </form>
 </div>
 
 <script type="text/javascript">
