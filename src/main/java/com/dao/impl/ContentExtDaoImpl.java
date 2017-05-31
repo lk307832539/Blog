@@ -1,22 +1,20 @@
 package com.dao.impl;
 
-import com.dao.ContentDao;
-import com.entity.Content;
+import com.dao.ContentExtDao;
+import com.entity.ContentExt;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
- * Created by LK on 2017/5/17.
+ * Created by LK on 2017/5/29.
  */
 @Repository
 @Transactional
-public class ContentDaoImpl implements ContentDao {
+public class ContentExtDaoImpl implements ContentExtDao {
     @Resource
     private SessionFactory sessionFactory;
 
@@ -31,16 +29,9 @@ public class ContentDaoImpl implements ContentDao {
     }
 
     @Override
-    public List<Content> getList() {
-        String hql = "from Content";
-        Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
-        return (List<Content>) query.list();
-    }
-
-    @Override
-    public Content save(Content content) {
-        this.getSession().save(content);
+    public ContentExt save(ContentExt contentExt) {
+        this.getSession().save(contentExt);
         this.getSession().flush();
-        return content;
+        return contentExt;
     }
 }

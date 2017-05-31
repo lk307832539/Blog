@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
  * Created by LK on 2016/8/4.
  */
 @Repository
+@Transactional
 public class UserDaoImpl implements UserDao {
     @Resource
     private SessionFactory sessionFactory;
@@ -30,7 +32,7 @@ public class UserDaoImpl implements UserDao {
 
     public List<User> getAllUser() {
         String hql = "from User";
-        Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
+        Query query = this.getSession().createQuery(hql);
         return (List<User>) query.list();
     }
 

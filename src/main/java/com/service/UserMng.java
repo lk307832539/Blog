@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by LK on 2016/8/4.
  */
-public interface UserMng {
+public abstract interface UserMng {
     List<User> getAllUser();
 
     User getUserById(Integer id);

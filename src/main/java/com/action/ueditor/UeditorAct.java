@@ -1,6 +1,9 @@
 package com.action.ueditor;
 
 import com.ueditor.ActionEnter;
+import com.ueditor.PathFormat;
+import com.ueditor.define.BaseState;
+import com.ueditor.define.State;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,8 +57,16 @@ public class UeditorAct {
             File dest = new File(filePath, name);
             file.transferTo(dest);
 
-        } else {
+            String showPath = request.getContextPath() + "/upload/image/" + df.format(new Date());
 
+            //在ueditor上显示内上传图片内容
+            State storageState = new BaseState(Boolean.TRUE);
+            if (storageState.isSuccess()) {
+                storageState.putInfo("url", PathFormat.format(showPath + "/" + name));
+                storageState.putInfo("type", fileExt);
+                storageState.putInfo("original", fileName);
+            }
+            response.getWriter().write(storageState.toJSONString());
         }
     }
 }

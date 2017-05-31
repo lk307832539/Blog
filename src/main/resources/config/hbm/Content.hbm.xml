@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="com.entity.Content" table="content" schema="blog">
-        <id name="contentId" column="content_id"/>
+        <id name="contentId" column="content_id">
+            <generator class="native"/>
+        </id>
         <property name="categoryId" column="category_id"/>
         <property name="createDate" column="create_date"/>
         <property name="pubDate" column="pub_date"/>

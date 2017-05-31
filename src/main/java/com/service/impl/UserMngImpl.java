@@ -4,6 +4,7 @@ import com.dao.UserDao;
 import com.entity.User;
 import com.service.UserMng;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * Created by LK on 2016/8/4.
  */
 @Service
+@Transactional
 public class UserMngImpl implements UserMng {
 
     @Resource

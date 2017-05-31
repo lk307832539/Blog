@@ -2,6 +2,22 @@
 
 写一个自己使用的博客系统，尝试将自己的笔记和学习内容进行输出，并记录遇到的坑
 
+### 2017/05/31 在保存内容执行flush()时候报no transaction is in progress错误
+在对数据进行保存执行save()方法正常，但是执行flush()后报javax.persistence.TransactionRequiredException:no transaction is in progress
+经过查找是因为spring的配置文件和springmvc的配置文件都对com下面的内容进行了扫描,分开后执行正常（留个待填的坑）
+重新修改applicationContext.xml和dispatcher-servlet.xml,顺便将以前不清楚的部分都分开，如视图都放在dispatcher-servlet.xml中
+1、applicationContext.xml
+```xml
+<context:component-scan base-package="com">
+    <context:exclude-filter type="regex" expression="com.action.*" />
+</context:component-scan>
+```
+2、dispatcher-servlet.xml
+```
+<context:component-scan base-package="com.action"/>
+```
+---
+
 ### 2017/05/28 在使用MultipartFile的transferTo方法，给定的路径没有建立文件夹时会包IO异常，需要先建立相关文件夹
 1、设置基本的文件信息
 ```java
@@ -50,7 +66,6 @@ MultipartHttpServletRequest multiRequest = resolver.resolveMultipart(request);
 MultipartFile file = multiRequest.getFile("upfile");
 ```
 
-
-参考[http://www.cnblogs.com/yskcoder/p/4718198.html](http://www.cnblogs.com/yskcoder/p/4718198.html)
+原因参考[http://www.cnblogs.com/yskcoder/p/4718198.html](http://www.cnblogs.com/yskcoder/p/4718198.html)
 
 ---

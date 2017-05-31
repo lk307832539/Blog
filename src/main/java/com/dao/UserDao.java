@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by LK on 2016/8/4.
  */
-public interface UserDao {
+public abstract interface UserDao {
     List<User> getAllUser();
 
     User getUserById(Integer id);
