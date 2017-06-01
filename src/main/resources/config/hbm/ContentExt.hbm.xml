@@ -5,7 +5,11 @@
 <hibernate-mapping>
 
     <class name="com.entity.ContentExt" table="content_ext" schema="blog">
-        <id name="contentId" column="content_id"/>
+        <id name="contentId" column="content_id">
+            <generator class="foreign">
+                <param name="property">content</param>
+            </generator>
+        </id>
         <property name="title" column="title"/>
         <property name="text" column="text"/>
         <one-to-one name="content" class="com.entity.Content"/>

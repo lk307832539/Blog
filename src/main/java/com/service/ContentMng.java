@@ -11,4 +11,6 @@ public abstract interface ContentMng {
     List<Content> getList();
 
     Content save(Content content);
+
+    Content getContentById(Integer id);
 }

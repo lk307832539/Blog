@@ -35,7 +35,7 @@ public class ContentAct {
     public String contentList(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
         List<Content> list = contentMng.getList();
 
-        model.addAttribute("contentList", list);
+        model.addAttribute("list", list);
 
         return "content/list";
     }
@@ -58,8 +58,18 @@ public class ContentAct {
         contentExt.setTitle(title);
         contentExt.setText(txt);
         contentExtMng.save(contentExt);
+        content.setContentExt(contentExt);
 
         return "redirect:/content/list.do";
+    }
+
+    @RequestMapping(value = "/view")
+    public String view(Integer id, HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+
+        Content content = contentMng.getContentById(id);
+
+        model.addAttribute("content", content);
+        return "content/view";
     }
 
 }

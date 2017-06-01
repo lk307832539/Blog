@@ -28,4 +28,9 @@ public class ContentMngImpl implements ContentMng {
     public Content save(Content content) {
         return contentDao.save(content);
     }
+
+    @Override
+    public Content getContentById(Integer id) {
+        return contentDao.getContentById(id);
+    }
 }

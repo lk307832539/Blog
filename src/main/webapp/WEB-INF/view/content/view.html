@@ -8,6 +8,9 @@
     <link href="/source/MDB/css/mdb.min.css" rel="stylesheet">
     <link href="/source/css/indexstyle.css" rel="stylesheet">
     <script type="text/javascript" src="/source/MDB/js/jquery-2.2.3.min.js"></script>
+
+    <script type="text/javascript" src="/source/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+    <link rel="stylesheet" type="text/css" href="/source/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css">
 </head>
 <body>
 <!--Navbar-->
@@ -15,16 +18,11 @@
 <!--/.Navbar-->
 
 <!--Mask-->
-<div class="view hm-black-strong">
-    <div class="full-bg-img flex-center">
-        <a target="_self" href="/content/add.do" class="btn btn-primary btn-lg">新建笔记</a>
-        <ul class="animated fadeInUp">
-            [#list list as content]
-            <li>
-                <h1 class="h1-responsive"><a href="/content/view.do?id=${content.contentId}">${content.contentExt.title!}</a></h1>
-            </li>
-            [/#list]
-        </ul>
+<div class="container">
+    <div style="height: 100px;"></div>
+    <h1>${content.contentExt.title}</h1>
+    <div>
+        ${content.contentExt.text}
     </div>
 </div>
 

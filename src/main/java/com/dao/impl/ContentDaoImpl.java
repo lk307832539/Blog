@@ -33,7 +33,7 @@ public class ContentDaoImpl implements ContentDao {
     @Override
     public List<Content> getList() {
         String hql = "from Content";
-        Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
+        Query query = this.getSession().createQuery(hql);
         return (List<Content>) query.list();
     }
 
@@ -42,5 +42,13 @@ public class ContentDaoImpl implements ContentDao {
         this.getSession().save(content);
         this.getSession().flush();
         return content;
+    }
+
+    @Override
+    public Content getContentById(Integer id) {
+        String hql = "from Content where id =:id ";
+        Query query = this.getSession().createQuery(hql);
+        query.setParameter("id", id);
+        return (Content) query.uniqueResult();
     }
 }
