@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>blog</title>
+    <link href="/fontAwesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/MDB/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/MDB/css/mdb.min.css" rel="stylesheet">
+    <link href="/css/indexstyle.css" rel="stylesheet">
+    <script type="text/javascript" src="/MDB/js/jquery-2.2.3.min.js"></script>
+
+    <script type="text/javascript" src="/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+    <link rel="stylesheet" type="text/css" href="/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css">
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+</head>
+<body>
+<!--Navbar-->
+[#include "../include/navbar.html"/]
+<!--/.Navbar-->
+
+<!--Mask-->
+<div class="container">
+    <div style="height: 100px;"></div>
+    <div class="row">
+        <div><h1>${content.contentExt.title}</h1></div>
+    </div>
+    <div class="row">
+        ${content.contentExt.text}
+    </div>
+</div>
+
+<script type="text/javascript" src="/MDB/js/tether.min.js"></script>
+<script type="text/javascript" src="/MDB/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/MDB/js/mdb.min.js"></script>
+</body>
+</html>
