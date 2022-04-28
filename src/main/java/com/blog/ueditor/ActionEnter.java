@@ -7,8 +7,7 @@ import com.blog.ueditor.define.State;
 import com.blog.ueditor.hunter.FileManager;
 import com.blog.ueditor.hunter.ImageHunter;
 import com.blog.ueditor.upload.Uploader;
-import org.springframework.boot.configurationprocessor.json.JSONException;
-
+import org.json.JSONException;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 

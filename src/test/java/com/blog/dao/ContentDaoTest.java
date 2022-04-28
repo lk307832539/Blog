@@ -1,11 +1,13 @@
 package com.blog.dao;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 
 @SpringBootTest
+@Disabled
 public class ContentDaoTest {
     @Resource
     private ContentDao contentDao;

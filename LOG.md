@@ -2,6 +2,23 @@
 
 写一个自己使用的博客系统，尝试将自己的笔记和学习内容进行输出，并记录遇到的坑
 
+### 2022/04/28
+使用configurationprocessor中的json包，打成jar包后无法运行,不可以使用原生依赖的json jar包
+```xml
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20220320</version>
+</dependency>
+```
+```java
+import org.springframework.boot.configurationprocessor.json.JSONException;
+//更换为
+import org.json.JSONException;
+```
+
+原因参考[https://github.com/spring-projects/spring-boot/issues/24244](https://github.com/spring-projects/spring-boot/issues/24244)
+
 ### 2022/04/25
 重启启动项目，将项目转为SpringBoot的，以之前的项目为模版更新。
 
